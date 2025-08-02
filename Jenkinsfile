@@ -10,19 +10,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/goutamkumar120/SampleSpringbootProject.git'
             }
         }
-        stage('Maven Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
         stage('Maven Build') {
             steps {
                 sh 'mvn package'
             }
         }
-        stage('Maven Deploy') {
+        stage('Docker Deployment') {
             steps {
-                echo " Deploying the war file to the server"
+                sh 'docker build -t goutam/springboot:latest .'
             }
         }
     }

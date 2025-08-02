@@ -1,5 +1,5 @@
 # Use OpenJDK 21 based on Alpine Linux for a small image size
-FROM openjdk:21-alpine
+FROM eclipse-temurin:21-jdk-alpine
 
 # Copy the built WAR file from your build context into the /usr/app directory inside the container
 # Ensure that 'sample-app-0.0.1.war' matches the actual name of your built artifact
